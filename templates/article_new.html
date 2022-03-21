@@ -3,6 +3,11 @@
 
 
 {% block content %}
+<style>
+    #cke_id_body {
+    width: 100% !important;
+    }
+</style>
     <h1>Yangi post</h1>
     <form method="post" enctype="multipart/form-data">{% csrf_token %}
         {{ form.media }}

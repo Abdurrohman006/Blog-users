@@ -3,7 +3,7 @@
 
 {% block content %}
     {% for article in object_list %}
-        <div class="card mx-auto" style="width: 45rem;">
+        <div class="card mx-auto w-100">
             <div class="card-header mx-auto">
                 <span class="font-weight-bold"><a style="text-decoration: none" href="{% url 'article_detail' article.pk %}"><h2>{{ article.title }}</h2></a></span>
             </div>
