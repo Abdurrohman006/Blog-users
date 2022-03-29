@@ -2,8 +2,15 @@
 {% block title %}Postlar{% endblock title %}
 
 {% block content %}
+<div class="container ona">
+    <style>
+        .ona {
+        margin: auto center !important;
+        }
+    </style>
+
+        <div class="card mx-auto postlarim">
     {% for article in object_list %}
-        <div class="card mx-auto w-100">
             <div class="card-header mx-auto">
                 <span class="font-weight-bold"><a style="text-decoration: none" href="{% url 'article_detail' article.pk %}"><h2>{{ article.title }}</h2></a></span>
             </div>
@@ -11,16 +18,16 @@
             {% if article.photo %}
              <img class="card-img-top w-100" src="{{ article.photo.url }}" alt="{{ article.title }}">
             {% endif %}
-            <div class="card-body ">
+            <div class="card-body " style="font-size:1.1rem">
                 {{ article.summary }}...<a href="{% url 'article_detail' article.pk %}">Batafsil</a>
             </div>
 
             <div class="card-footer text-left text-muted">
-                <span class="text-muted">by {{ article.author | title }} &middot; {{ article.date }}</span>
+                <span class="text-muted" style="font-size:1.1rem">by {{ article.author | title }} &middot; {{ article.date }}</span>
             </div>
         <br />
         <br />
     {% endfor %}    
     </div>
-
+</div>
 {% endblock content %}

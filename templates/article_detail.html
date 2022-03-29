@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    <div class="container">
         <div class="container-fluid">
             <div class="card border-0">
                 <div class="card_body">
@@ -10,9 +11,11 @@
                     <h1 class='card-title'>{{ object.title }}</h1>
                     <h6 class="card-subtite mb-2 text-muted">Muallif: {{ object.author }} | {{ object.date }}</h6>
                     <p class="card-text">{{ object.body | safe }}</p>
+                    <ul style="margin-top:5rem;">
                     <a href="{% url 'article_edit' article.pk %}">Tahrirlash | </a>
                     <a href="{% url 'article_delete' article.pk %}">O'chirish | </a>
                     <a href="{% url 'article_list' %}">Barcha postlar</a>
+                    </ul>
                 </div>
                     <div class="card">
                         <div class="card-header">Izohlar</div>
@@ -28,4 +31,5 @@
             </div>
             <p></p>
         </div>
+    </div>
 {% endblock content %}

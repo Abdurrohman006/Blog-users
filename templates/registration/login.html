@@ -3,10 +3,13 @@
 {% block title %}Kirish{% endblock title %}
 
 {% block content %}
+<div class="container">
     <h2>Saytga kirish</h2>
     <form method="post">{% csrf_token %}
         {{ form|crispy }}
+        <br/>
         <button type="submit" class="btn btn-outline-success ml-2">Kirish</button>
-        <a class="btn btn-outline-danger" href="{% url 'password_reset' %}" role="button" >Kalit so'zni tiklash</a>
+<!--        <a class="btn btn-outline-danger" href="{% url 'password_reset' %}" role="button" >Kalit so'zni tiklash</a>-->
     </form>
+</div>
 {% endblock content %}
